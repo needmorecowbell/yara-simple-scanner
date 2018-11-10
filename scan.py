@@ -36,7 +36,8 @@ def scanTargetDirectory(target_path, ruleSet ):
                 if(isMatch(rule,os.path.join(root,file))):
                     matches = rule.match(os.path.join(root,file))
                     if(matches):
-                        print("\t\tYARA MATCH: "+ os.path.join(root,file)+"\t"+matches[0].rule)
+                        for match in matches:
+                            print("\t\tYARA MATCH: "+ os.path.join(root,file)+"\t"+match.rule)
 
 print("Loading rules")
 ruleset = compileRules(rule_path)
